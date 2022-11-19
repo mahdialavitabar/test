@@ -20,16 +20,26 @@ const HomePage: FC = () => {
         setData(groupByDate([...raw]));
         break;
       case Filter.PAYMENTS:
-        setData(groupByDate([...raw.filter((i:any)=>i.type === "payments")]));
+        setData(
+          groupByDate([...raw.filter((i: any) => i.type === "payments")])
+        );
         break;
       case Filter.FINANCE:
-        setData(groupByDate([...raw.filter((i:any)=>i.type === "trip_financials")]));
+        setData(
+          groupByDate([...raw.filter((i: any) => i.type === "trip_financials")])
+        );
         break;
       case Filter.CONCURRENCY:
-        setData(groupByDate([...raw.filter((i:any)=>i.type === "concurrency_costs")]));
+        setData(
+          groupByDate([
+            ...raw.filter((i: any) => i.type === "concurrency_costs"),
+          ])
+        );
         break;
       case Filter.MISC:
-        setData(groupByDate([...raw.filter((i:any)=>i.type === "misc_expenses")]));
+        setData(
+          groupByDate([...raw.filter((i: any) => i.type === "misc_expenses")])
+        );
         break;
       default:
         setData({ all: raw });
